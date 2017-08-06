@@ -1,0 +1,14 @@
+version: '2'
+services:
+    suneofinanzas-app:
+        image: suneofinanzas
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATASOURCE_URL=jdbc:postgresql://suneofinanzas-postgresql:5432/suneofinanzas
+            - JHIPSTER_SLEEP=10 # gives time for the database to boot before the application
+        ports:
+            - 8080:8080
+    suneofinanzas-postgresql:
+        extends:
+            file: postgresql.yml
+            service: suneofinanzas-postgresql

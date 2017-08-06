@@ -1,0 +1,11 @@
+version: '2'
+services:
+    suneofinanzas-postgresql:
+        image: postgres:9.6.2
+        # volumes:
+        #     - ~/volumes/jhipster/suneofinanzas/postgresql/:/var/lib/postgresql/data/
+        environment:
+            - POSTGRES_USER=suneofinanzas
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432
