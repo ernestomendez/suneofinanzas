@@ -42,6 +42,8 @@ public class CacheConfiguration {
             cm.createCache(mx.com.dxesoft.suneofinanzas.domain.User.class.getName() + ".authorities", jcacheConfiguration);
             cm.createCache(mx.com.dxesoft.suneofinanzas.domain.PersistentToken.class.getName(), jcacheConfiguration);
             cm.createCache(mx.com.dxesoft.suneofinanzas.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
+            cm.createCache(mx.com.dxesoft.suneofinanzas.domain.ConceptosDePago.class.getName(), jcacheConfiguration);
+            cm.createCache(mx.com.dxesoft.suneofinanzas.domain.Montos.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

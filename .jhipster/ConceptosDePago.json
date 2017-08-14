@@ -1,0 +1,52 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 300
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 500
+        },
+        {
+            "fieldName": "creationDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "disabledDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "taxpercentaje",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 100
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean"
+        }
+    ],
+    "changelogDate": "20170806230200",
+    "entityTableName": "conceptos_de_pago",
+    "dto": "no",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "angularJSSuffix": "dxesoft"
+}

@@ -1,0 +1,27 @@
+{
+    "suneofinanzasApp": {
+        "montos" : {
+            "home": {
+                "title": "Montos",
+                "createLabel": "Crear nuevo Montos",
+                "createOrEditLabel": "Crear o editar Montos"
+            },
+            "created": "Un nuevo Montos ha sido creado con el identificador {{ param }}",
+            "updated": "Un Montos ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Montos ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Montos {{ id }}?"
+            },
+            "detail": {
+                "title": "Montos"
+            },
+            "amount": "Amount",
+            "startDate": "Start Date",
+            "endDate": "End Date",
+            "ciclo": "Ciclo",
+            "active": "Active",
+            "tax": "Tax",
+            "concepto": "Concepto"
+        }
+    }
+}

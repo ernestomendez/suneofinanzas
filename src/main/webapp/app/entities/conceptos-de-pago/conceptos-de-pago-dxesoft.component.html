@@ -1,0 +1,74 @@
+<div>
+    <h2>
+        <span jhiTranslate="suneofinanzasApp.conceptosDePago.home.title">Conceptos De Pagos</span>
+        <button class="btn btn-primary float-right jh-create-entity create-conceptos-de-pago-dxesoft" [routerLink]="['/', { outlets: { popup: ['conceptos-de-pago-dxesoft-new'] } }]">
+            <span class="fa fa-plus"></span>
+            <span  jhiTranslate="suneofinanzasApp.conceptosDePago.home.createLabel">
+            Create new Conceptos De Pago
+            </span>
+        </button>
+    </h2>
+    <jhi-alert></jhi-alert>
+    <div class="row">
+    </div>
+    <br/>
+    <div class="table-responsive" *ngIf="conceptosDePagos">
+        <table class="table table-striped">
+            <thead>
+            <tr jhiSort [(predicate)]="predicate" [(ascending)]="reverse" [callback]="transition.bind(this)">
+            <th jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="name"><span jhiTranslate="suneofinanzasApp.conceptosDePago.name">Name</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="description"><span jhiTranslate="suneofinanzasApp.conceptosDePago.description">Description</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="creationDate"><span jhiTranslate="suneofinanzasApp.conceptosDePago.creationDate">Creation Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="disabledDate"><span jhiTranslate="suneofinanzasApp.conceptosDePago.disabledDate">Disabled Date</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="taxpercentaje"><span jhiTranslate="suneofinanzasApp.conceptosDePago.taxpercentaje">Taxpercentaje</span> <span class="fa fa-sort"></span></th>
+            <th jhiSortBy="active"><span jhiTranslate="suneofinanzasApp.conceptosDePago.active">Active</span> <span class="fa fa-sort"></span></th>
+            <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor="let conceptosDePago of conceptosDePagos ;trackBy: trackId">
+                <td><a [routerLink]="['../conceptos-de-pago-dxesoft', conceptosDePago.id ]">{{conceptosDePago.id}}</a></td>
+                <td>{{conceptosDePago.name}}</td>
+                <td>{{conceptosDePago.description}}</td>
+                <td>{{conceptosDePago.creationDate | date:'mediumDate'}}</td>
+                <td>{{conceptosDePago.disabledDate | date:'mediumDate'}}</td>
+                <td>{{conceptosDePago.taxpercentaje}}</td>
+                <td>{{conceptosDePago.active}}</td>
+                <td class="text-right">
+                    <div class="btn-group flex-btn-group-container">
+                        <button type="submit"
+                                [routerLink]="['../conceptos-de-pago-dxesoft', conceptosDePago.id ]"
+                                class="btn btn-info btn-sm">
+                            <span class="fa fa-eye"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.view">View</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'conceptos-de-pago-dxesoft/'+ conceptosDePago.id + '/edit'} }]"
+                                replaceUrl="true"
+                                class="btn btn-primary btn-sm">
+                            <span class="fa fa-pencil"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                        <button type="submit"
+                                [routerLink]="['/', { outlets: { popup: 'conceptos-de-pago-dxesoft/'+ conceptosDePago.id + '/delete'} }]"
+                                replaceUrl="true"
+                                class="btn btn-danger btn-sm">
+                            <span class="fa fa-remove"></span>
+                            <span class="hidden-md-down" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </div>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+        <div *ngIf="conceptosDePagos && conceptosDePagos.length">
+            <div class="row justify-content-center">
+                <jhi-item-count [page]="page" [total]="queryCount" [itemsPerPage]="itemsPerPage"></jhi-item-count>
+            </div>
+            <div class="row justify-content-center">
+                <ngb-pagination [collectionSize]="totalItems" [(page)]="page" (pageChange)="loadPage(page)"></ngb-pagination>
+            </div>
+        </div>
+</div>

@@ -1,0 +1,49 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "concepto",
+            "otherEntityName": "conceptosDePago",
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": [
+                "required"
+            ],
+            "otherEntityField": "name"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "amount",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "endDate",
+            "fieldType": "LocalDate"
+        },
+        {
+            "fieldName": "ciclo",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "active",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "tax",
+            "fieldType": "String"
+        }
+    ],
+    "changelogDate": "20170806230201",
+    "dto": "no",
+    "service": "serviceImpl",
+    "entityTableName": "montos",
+    "pagination": "pagination",
+    "angularJSSuffix": "dxesoft"
+}

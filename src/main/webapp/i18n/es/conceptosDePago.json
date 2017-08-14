@@ -1,0 +1,26 @@
+{
+    "suneofinanzasApp": {
+        "conceptosDePago" : {
+            "home": {
+                "title": "Conceptos De Pagos",
+                "createLabel": "Crear nuevo Conceptos De Pago",
+                "createOrEditLabel": "Crear o editar Conceptos De Pago"
+            },
+            "created": "Un nuevo Conceptos De Pago ha sido creado con el identificador {{ param }}",
+            "updated": "Un Conceptos De Pago ha sido actualizado con el identificador {{ param }}",
+            "deleted": "Un Conceptos De Pago ha sido eliminado con el identificador {{ param }}",
+            "delete": {
+                "question": "¿Seguro que quiere eliminar Conceptos De Pago {{ id }}?"
+            },
+            "detail": {
+                "title": "Conceptos De Pago"
+            },
+            "name": "Name",
+            "description": "Description",
+            "creationDate": "Creation Date",
+            "disabledDate": "Disabled Date",
+            "taxpercentaje": "Taxpercentaje",
+            "active": "Active"
+        }
+    }
+}

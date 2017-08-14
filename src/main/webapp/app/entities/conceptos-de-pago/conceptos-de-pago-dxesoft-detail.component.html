@@ -1,0 +1,45 @@
+
+<div *ngIf="conceptosDePago">
+    <h2><span jhiTranslate="suneofinanzasApp.conceptosDePago.detail.title">Conceptos De Pago</span> {{conceptosDePago.id}}</h2>
+    <hr>
+    <jhi-alert-error></jhi-alert-error>
+    <dl class="row-md jh-entity-details">
+        <dt><span jhiTranslate="suneofinanzasApp.conceptosDePago.name">Name</span></dt>
+        <dd>
+            <span>{{conceptosDePago.name}}</span>
+        </dd>
+        <dt><span jhiTranslate="suneofinanzasApp.conceptosDePago.description">Description</span></dt>
+        <dd>
+            <span>{{conceptosDePago.description}}</span>
+        </dd>
+        <dt><span jhiTranslate="suneofinanzasApp.conceptosDePago.creationDate">Creation Date</span></dt>
+        <dd>
+            <span>{{conceptosDePago.creationDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="suneofinanzasApp.conceptosDePago.disabledDate">Disabled Date</span></dt>
+        <dd>
+            <span>{{conceptosDePago.disabledDate | date:'mediumDate'}}</span>
+        </dd>
+        <dt><span jhiTranslate="suneofinanzasApp.conceptosDePago.taxpercentaje">Taxpercentaje</span></dt>
+        <dd>
+            <span>{{conceptosDePago.taxpercentaje}}</span>
+        </dd>
+        <dt><span jhiTranslate="suneofinanzasApp.conceptosDePago.active">Active</span></dt>
+        <dd>
+            <span>{{conceptosDePago.active}}</span>
+        </dd>
+    </dl>
+
+    <button type="submit"
+            (click)="previousState()"
+            class="btn btn-info">
+        <span class="fa fa-arrow-left"></span>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+    </button>
+
+    <button type="button"
+            [routerLink]="['/', { outlets: { popup: 'conceptos-de-pago-dxesoft/'+ conceptosDePago.id + '/edit'} }]"
+            replaceUrl="true"
+            class="btn btn-primary">
+        <span class="fa fa-pencil"></span>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+    </button>
+</div>
