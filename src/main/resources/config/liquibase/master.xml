@@ -9,5 +9,6 @@
     <include file="config/liquibase/changelog/20170806230201_added_entity_Montos.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
     <include file="config/liquibase/changelog/20170806230201_added_entity_constraints_Montos.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20170813232540_alter_entity_ConceptosDePago.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
 </databaseChangeLog>

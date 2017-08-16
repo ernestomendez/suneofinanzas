@@ -25,7 +25,7 @@ public class MoneyConverter implements AttributeConverter<BidxichiMoney, String>
 
     @Override
     public BidxichiMoney convertToEntityAttribute(String monetaryStr) {
-        String[] monetary = monetaryStr.split(SEPARATOR);
+        String[] monetary = monetaryStr.split("\\|");
         return BidxichiMoney.withCurrency(monetary[0], monetary[1]);
     }
 }

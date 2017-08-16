@@ -9,7 +9,6 @@ import javax.persistence.*;
 import javax.validation.constraints.*;
 import java.io.Serializable;
 import java.time.LocalDate;
-import java.util.Objects;
 
 /**
  * A ConceptosDePago.
@@ -51,6 +50,9 @@ public class ConceptosDePago implements Serializable {
 
     @Column(name = "active")
     private Boolean active;
+
+    @Column(name = "linea_captura_required")
+    private Boolean lineaCapturaRequired;
 
     public Long getId() {
         return id;
@@ -136,5 +138,18 @@ public class ConceptosDePago implements Serializable {
 
     public void setActive(Boolean active) {
         this.active = active;
+    }
+
+    public Boolean isGeneraAdeudo() {
+        return lineaCapturaRequired;
+    }
+
+    public void setLineaCapturaRequired(Boolean lineaCapturaRequired) {
+        this.lineaCapturaRequired = lineaCapturaRequired;
+    }
+
+    public ConceptosDePago generaAdeudo(Boolean generaAdeudo) {
+        this.lineaCapturaRequired = generaAdeudo;
+        return this;
     }
 }

@@ -9,7 +9,9 @@ export class ConceptosDePagoDxesoft implements BaseEntity {
         public disabledDate?: any,
         public taxpercentaje?: number,
         public active?: boolean,
+        public lineaCapturaRequired?: boolean
     ) {
         this.active = true;
+        this.lineaCapturaRequired = true;
     }
 }
