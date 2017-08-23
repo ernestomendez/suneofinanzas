@@ -17,7 +17,6 @@ import java.time.LocalDate;
 @Table(name = "conceptos_de_pago")
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 @EqualsAndHashCode
-@ToString
 public class ConceptosDePago implements Serializable {
 
     private static final long serialVersionUID = 5703548537787657371L;

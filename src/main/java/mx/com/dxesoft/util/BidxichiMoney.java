@@ -69,6 +69,15 @@ public final class BidxichiMoney implements Serializable {
         return currency;
     }
 
+    /**
+     * Adds a bixdichiMoney
+     *
+     * @param bidxichiMoney bidxichiMoney to be added.
+     */
+    public void add(BidxichiMoney bidxichiMoney) {
+        this.value = this.getValue().add(bidxichiMoney.getValue());
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;

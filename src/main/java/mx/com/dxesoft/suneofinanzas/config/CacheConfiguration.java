@@ -1,6 +1,7 @@
 package mx.com.dxesoft.suneofinanzas.config;
 
 import io.github.jhipster.config.JHipsterProperties;
+import mx.com.dxesoft.suneofinanzas.domain.Adeudo;
 import org.ehcache.config.builders.CacheConfigurationBuilder;
 import org.ehcache.config.builders.ResourcePoolsBuilder;
 import org.ehcache.expiry.Duration;
@@ -44,6 +45,7 @@ public class CacheConfiguration {
             cm.createCache(mx.com.dxesoft.suneofinanzas.domain.User.class.getName() + ".persistentTokens", jcacheConfiguration);
             cm.createCache(mx.com.dxesoft.suneofinanzas.domain.ConceptosDePago.class.getName(), jcacheConfiguration);
             cm.createCache(mx.com.dxesoft.suneofinanzas.domain.Montos.class.getName(), jcacheConfiguration);
+            cm.createCache(Adeudo.class.getName(), jcacheConfiguration);
             // jhipster-needle-ehcache-add-entry
         };
     }

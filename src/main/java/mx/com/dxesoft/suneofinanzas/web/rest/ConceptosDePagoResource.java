@@ -93,6 +93,11 @@ public class ConceptosDePagoResource {
     public ResponseEntity<List<ConceptosDePago>> getAllConceptosDePagos(@ApiParam Pageable pageable) {
         log.debug("REST request to get a page of ConceptosDePagos");
         Page<ConceptosDePago> page = conceptosDePagoService.findAll(pageable);
+
+        System.out.println("@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@");
+        page.getContent().forEach(System.out::println);
+        System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
+
         HttpHeaders headers = PaginationUtil.generatePaginationHttpHeaders(page, "/api/conceptos-de-pagos");
         return new ResponseEntity<>(page.getContent(), headers, HttpStatus.OK);
     }

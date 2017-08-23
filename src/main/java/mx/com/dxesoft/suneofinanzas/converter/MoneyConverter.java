@@ -2,12 +2,8 @@ package mx.com.dxesoft.suneofinanzas.converter;
 
 
 import mx.com.dxesoft.util.BidxichiMoney;
-import org.javamoney.moneta.Money;
-
-import javax.money.MonetaryAmount;
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
-import java.math.BigDecimal;
 
 @Converter
 public class MoneyConverter implements AttributeConverter<BidxichiMoney, String> {

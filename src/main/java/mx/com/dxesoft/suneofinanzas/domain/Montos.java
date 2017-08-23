@@ -20,7 +20,7 @@ import java.util.Objects;
 @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
 public class Montos implements Serializable {
 
-    private static final long serialVersionUID = 1L;
+    private static final long serialVersionUID = 6459632961738356800L;
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "sequenceGenerator")
@@ -48,7 +48,7 @@ public class Montos implements Serializable {
     @Convert(converter = MoneyConverter.class)
     private BidxichiMoney tax;
 
-    @ManyToOne(optional = false)
+    @ManyToOne(optional = false, fetch = FetchType.EAGER)
     @NotNull
     private ConceptosDePago concepto;
 

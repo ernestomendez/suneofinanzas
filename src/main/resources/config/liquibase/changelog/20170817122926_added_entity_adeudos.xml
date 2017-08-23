@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <property name="now" value="now()" dbms="h2"/>
+
+    <property name="now" value="current_timestamp" dbms="postgresql"/>
+
+    <property name="floatType" value="float4" dbms="postgresql, h2"/>
+    <property name="floatType" value="float" dbms="mysql, oracle, mssql"/>
+
+    <changeSet id="20170817122926" author="Ernesto">
+        <createTable tableName="adeudos">
+            <column name="id" type="bigint" autoIncrement="${autoIncrement}">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="concepto_id" type="bigint">
+                <constraints nullable="false" />
+            </column>
+            <column name="concepto_name" type="varchar(300)">
+                <constraints nullable="false" />
+            </column>
+            <column name="description" type="varchar(500)">
+                <constraints nullable="true" />
+            </column>
+            <column name="creation_date" type="date" valueDate="${now}">
+                <constraints nullable="false" />
+            </column>
+            <column name="status" type="varchar(50)">
+                <constraints nullable="false" />
+            </column>
+            <column name="amount" type="varchar(10)">
+                <constraints nullable="false" />
+            </column>
+            <column name="taxes" type="varchar(10)">
+                <constraints nullable="false" />
+            </column>
+            <column name="alumno_curp" type="varchar(20)">
+                <constraints nullable="false" />
+            </column>
+            <column name="alumno_name" type="varchar(250)">
+                <constraints nullable="false" />
+            </column>
+            <column name="alumno_matricula" type="varchar(20)">
+                <constraints nullable="false" />
+            </column>
+        </createTable>
+    </changeSet>
+
+</databaseChangeLog>

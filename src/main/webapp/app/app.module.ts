@@ -9,6 +9,7 @@ import { SuneofinanzasHomeModule } from './home/home.module';
 import { SuneofinanzasAdminModule } from './admin/admin.module';
 import { SuneofinanzasAccountModule } from './account/account.module';
 import { SuneofinanzasEntityModule } from './entities/entity.module';
+import { SuneofinanzasAdeudosModule } from './adeudos/adeudos.module';
 
 import { customHttpProvider } from './blocks/interceptor/http.provider';
 import { PaginationConfig } from './blocks/config/uib-pagination.config';
@@ -36,6 +37,7 @@ import {
         SuneofinanzasAdminModule,
         SuneofinanzasAccountModule,
         SuneofinanzasEntityModule,
+        SuneofinanzasAdeudosModule,
         // jhipster-needle-angular-add-module JHipster will add new module here
     ],
     declarations: [
