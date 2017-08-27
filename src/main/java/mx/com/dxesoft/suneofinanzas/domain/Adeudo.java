@@ -1,7 +1,5 @@
 package mx.com.dxesoft.suneofinanzas.domain;
 
-import lombok.Data;
-import lombok.ToString;
 import mx.com.dxesoft.suneofinanzas.datatypes.Alumno;
 import mx.com.dxesoft.suneofinanzas.datatypes.MontosEmbeddable;
 import mx.com.dxesoft.suneofinanzas.domain.enumeration.AdeudosStatus;
@@ -49,7 +47,7 @@ public class Adeudo implements Serializable {
     private AdeudosStatus status;
 
     @Embedded
-    private MontosEmbeddable montosEmbeddable;
+    private MontosEmbeddable montos;
 
     @Embedded
     @AttributeOverrides({
@@ -99,12 +97,12 @@ public class Adeudo implements Serializable {
         this.status = status;
     }
 
-    public MontosEmbeddable getMontosEmbeddable() {
-        return montosEmbeddable;
+    public MontosEmbeddable getMontos() {
+        return montos;
     }
 
-    public void setMontosEmbeddable(MontosEmbeddable montosEmbeddable) {
-        this.montosEmbeddable = montosEmbeddable;
+    public void setMontos(MontosEmbeddable montos) {
+        this.montos = montos;
     }
 
     public Alumno getAlumno() {
@@ -125,13 +123,13 @@ public class Adeudo implements Serializable {
             Objects.equals(getConceptoName(), adeudo.getConceptoName()) &&
             Objects.equals(getDescription(), adeudo.getDescription()) &&
             getStatus() == adeudo.getStatus() &&
-            Objects.equals(getMontosEmbeddable(), adeudo.getMontosEmbeddable()) &&
+            Objects.equals(getMontos(), adeudo.getMontos()) &&
             Objects.equals(getAlumno(), adeudo.getAlumno());
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(getId(), getConceptosDePago(), getConceptoName(), getDescription(), getStatus(), getMontosEmbeddable(), getAlumno());
+        return Objects.hash(getId(), getConceptosDePago(), getConceptoName(), getDescription(), getStatus(), getMontos(), getAlumno());
     }
 
     @Override
@@ -142,7 +140,7 @@ public class Adeudo implements Serializable {
             .append("conceptoName", conceptoName)
             .append("description", description)
             .append("status", status)
-            .append("montosEmbeddable", montosEmbeddable)
+            .append("montos", montos)
             .append("alumno", alumno)
             .toString();
     }

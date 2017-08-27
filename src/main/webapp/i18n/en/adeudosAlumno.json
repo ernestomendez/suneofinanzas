@@ -1,0 +1,10 @@
+{
+    "suneofinanzasApp": {
+        "adeudosAlumno": {
+            "home": {
+                "title": "Adeudos por alumno",
+                "create": "Nuevo Adeudo"
+            }
+        }
+    }
+}

@@ -1,12 +1,13 @@
-import { BaseEntity } from './../../shared';
+import {AlumnosDxesoft} from '../alumnos/alumnos-dxesoft.model';
+import {BidxichiMoneyDxesoft} from '../../entities/bidxichi-money/bidxichi-money-dxesoft.model';
+import {AdeudosDxesoft} from '../adeudos/adeudos-dxesoft.model';
 
-export class AdeudosAlumnosDxesoft implements BaseEntity {
+export class AdeudosAlumnosDxesoft {
     constructor(
-        public id?: number,
-        public concepto?: BaseEntity,
-        public conceptoName?: string,
-        public description?: string,
+        public alumno?: AlumnosDxesoft,
+        public saldo?: BidxichiMoneyDxesoft,
+        public adeudos?: AdeudosDxesoft[]
+    ) {
 
-
-    ){}
+    }
 }

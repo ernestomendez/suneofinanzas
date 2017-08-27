@@ -50,7 +50,7 @@ public class AdeudosServiceImpl implements AdeudosService {
         BidxichiMoney saldoAlumno = new BidxichiMoney();
 
         for (Adeudo adeudo : adeudosAlumno) {
-            saldoAlumno.add(adeudo.getMontosEmbeddable().getAmount());
+            saldoAlumno.add(adeudo.getMontos().getAmount());
         }
 
         return new AdeudoDto(alumno, adeudosAlumno, saldoAlumno);
